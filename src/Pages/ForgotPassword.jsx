@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import "react-toastify/ReactToastify.css"
 
 const ForgotPassword = () => {
             const[email,setEmail] = useState("");

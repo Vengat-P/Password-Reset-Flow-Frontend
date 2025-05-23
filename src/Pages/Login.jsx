@@ -1,13 +1,33 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import "react-toastify/ReactToastify.css"
 
-const Login = () => {
+const Login = ({setToken}) => {
         const [showPassword,setShowPassword] = useState(false);
         const[email,setEmail] = useState("");
         const [password,setPassword]= useState("");
         
-        const handleSubmit = (e)=>{
-    
+        const handleSubmit = async(e)=>{
+    e.preventDefault();
+            const payload = {email,password}
+            await axios.post("http://localhost:5000/api/auth/login",payload)
+            //to handle response and errors
+            .then((res)=>{
+                toast.success(res.data.message)
+                // navigate("/Welcome")
+                setToken(res.data.token)
+
+            })
+            .catch((error)=>{
+                console.log(error);
+                toast.error(error.response.data.message)
+                
+            })
+            //clear previous value
+            setEmail("")
+            setPassword("")
         }
     return (
         <div>

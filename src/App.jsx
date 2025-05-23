@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RegisterPage from "./Pages/Register";
 import Login from "./Pages/Login";
@@ -7,6 +7,7 @@ import ResetPassword from "./Pages/ResetPassword";
 import { ToastContainer } from "react-toastify";
 
 const App = () => {
+  const [token,setToken] = useState("")
   return (
     <div>
       <div>
@@ -15,7 +16,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<RegisterPage />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login setToken={setToken}/>} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
