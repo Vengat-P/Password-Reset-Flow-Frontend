@@ -2,32 +2,31 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import "react-toastify/ReactToastify.css"
+import "react-toastify/ReactToastify.css";
 
 const Register = () => {
-    const [showPassword,setShowPassword] = useState(false);
-    const[username,setUserName]= useState("");
-    const[email,setEmail] = useState("");
-    const [password,setPassword]= useState("");
-    const navigate = useNavigate();
-    const handleSubmit = async(e)=>{
-        e.preventDefault();
-        const payload = {username,email,password}
-        await axios.post("http://localhost:5000/api/auth/register",payload)
-        .then((res)=>{
-            toast.success(res.data.message)
-            navigate("/login")
-        })
-        .catch((error)=>{
-            console.log(error);
-            toast.error(error.response.data.message)
-            
-        })
-        setUserName("")
-        setEmail("")
-        setPassword("")
-
-    }
+  const [showPassword, setShowPassword] = useState(false);
+  const [username, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const payload = { username, email, password };
+    await axios
+      .post("http://localhost:5000/api/auth/register", payload)
+      .then((res) => {
+        toast.success(res.data.message);
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.response.data.message);
+      });
+    setUserName("");
+    setEmail("");
+    setPassword("");
+  };
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -60,7 +59,7 @@ const Register = () => {
         <p>
           <label htmlFor="password">Password</label>
           <input
-            type={showPassword ? "text" :"password"}
+            type={showPassword ? "text" : "password"}
             name="password"
             id="password"
             placeholder="Enter your Password"
@@ -69,15 +68,18 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
-          <button type="button" onClick={()=> setShowPassword(!showPassword)}>{showPassword ? "Hide" : "Show"}Password</button>
+          <button type="button" onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? "Hide" : "Show"}Password
+          </button>
           <br />
           <button type="submit">Register</button>
         </p>
         <br />
-
       </form>
       <button>
-        <Link to={"/login"} >Already Have an account ? <span>Login</span></Link>
+        <Link to={"/login"}>
+          Already Have an account ? <span>Login</span>
+        </Link>
       </button>
     </div>
   );
