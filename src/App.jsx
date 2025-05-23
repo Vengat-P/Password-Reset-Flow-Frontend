@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/" element={<RegisterPage />} />
           <Route path="/login" element={<Login setToken={setToken}/>} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/reset-password/:id/:token" element={<ResetPassword />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -59,7 +59,7 @@ const Login = ({setToken}) => {
                       <br />
                       <button type="button" onClick={()=> setShowPassword(!showPassword)}>{showPassword ? "Hide" : "Show"}Password</button>
                       <br />
-                      <button type="submit">Register</button>
+                      <button type="submit">Login</button>
                     </p>
                     <br />
             
