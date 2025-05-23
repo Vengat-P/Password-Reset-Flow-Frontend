@@ -4,10 +4,14 @@ import RegisterPage from "./Pages/Register";
 import Login from "./Pages/Login";
 import ForgotPassword from "./Pages/ForgotPassword";
 import ResetPassword from "./Pages/ResetPassword";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
     <div>
+      <div>
+        <ToastContainer/>
+      </div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<RegisterPage />} />
