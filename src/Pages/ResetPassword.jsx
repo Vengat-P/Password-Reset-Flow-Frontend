@@ -30,7 +30,7 @@ const ResetPassword = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <p>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">new password</label>
           <input
             type={showPassword ? "text" : "password"}
             name="password"
