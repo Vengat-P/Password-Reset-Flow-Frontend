@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/ReactToastify.css";
+import "@fontsource/poppins/400.css";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,7 +21,7 @@ const Register = () => {
         navigate("/login");
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         toast.error(error.response.data.message);
       });
     setUserName("");

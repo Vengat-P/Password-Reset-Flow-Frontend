@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/ReactToastify.css";
-
+import "@fontsource/poppins/400.css";
 const Login = ({ setToken }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
