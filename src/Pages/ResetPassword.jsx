@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/ReactToastify.css";
 import { useNavigate, useParams } from "react-router-dom";
-import "@fontsource/poppins/400.css";
+
 
 const ResetPassword = () => {
   const [showPassword, setShowPassword] = useState(false);

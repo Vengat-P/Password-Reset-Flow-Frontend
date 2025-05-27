@@ -5,6 +5,7 @@ import Login from "./Pages/Login";
 import ForgotPassword from "./Pages/ForgotPassword";
 import ResetPassword from "./Pages/ResetPassword";
 import { ToastContainer } from "react-toastify";
+import "@fontsource/poppins/400.css";
 
 const App = () => {
   const [token,setToken] = useState("")
