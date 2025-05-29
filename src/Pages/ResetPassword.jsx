@@ -25,14 +25,14 @@ const ResetPassword = () => {
       });
   };
   return (
-    <div>
+    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center  border border-2 bg-primary-subtle">
       <form
         onSubmit={handleSubmit}
-  
+        className=" d-flex flex-column justify-content-center  mt-2 mb-2 px-2 border-2 border rounded-3 bg-white"
       >
-        <p >
+        <p className="d-flex flex-column">
           <label htmlFor="password">New password</label>
-          <span >
+          <span className="d-flex justify-content-between">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -44,7 +44,7 @@ const ResetPassword = () => {
             />
             <button
               type="button"
-              
+              className="border-0 bg-white  "
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? (
@@ -79,7 +79,7 @@ const ResetPassword = () => {
           <br />
           <button
             type="submit"
-
+            className="border bg-success text-white rounded-2 p-2"
           >
             Update Password
           </button>
