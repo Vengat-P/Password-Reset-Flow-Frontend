@@ -113,9 +113,11 @@ const Login = ({ setToken }) => {
 
         <br />
         <button className="border-0 bg-white ">
-          <Link to={"/"}
-          className="d-flex rounded-2 text-decoration-none  text-muted justify-content-center">
-             dont Have an account ? <span className="text-danger">Register</span>
+          <Link
+            to={"/"}
+            className="d-flex rounded-2 text-decoration-none  text-muted justify-content-center"
+          >
+            dont Have an account ? <span className="text-danger">Register</span>
           </Link>
         </button>
       </div>

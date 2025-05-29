@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/ReactToastify.css";
 
-
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
@@ -23,8 +22,11 @@ const ForgotPassword = () => {
       });
   };
   return (
-    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center  border border-2 bg-primary-subtle" >
-      <form onSubmit={handleSubmit} className=" d-flex flex-column justify-content-center  mt-2 mb-2 px-2 border-2 border rounded-3 bg-white">
+    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center  border border-2 bg-primary-subtle">
+      <form
+        onSubmit={handleSubmit}
+        className=" d-flex flex-column justify-content-center  mt-2 mb-2 px-2 border-2 border rounded-3 bg-white"
+      >
         <p className="d-flex flex-column ">
           <label htmlFor="email">Email</label>
           <input
@@ -38,7 +40,12 @@ const ForgotPassword = () => {
           />
         </p>
         <br />
-        <button type="submit" className="border bg-success text-white rounded-2 p-2">Send</button>
+        <button
+          type="submit"
+          className="border bg-success text-white rounded-2 p-2"
+        >
+          Send
+        </button>
       </form>
     </div>
   );
