@@ -10,7 +10,7 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:5000/api/auth/forgot-password", { email })
+      .post("https://password-reset-flow-backend-123.onrender.com/api/auth/forgot-password", { email })
       //to handle response and errors
       .then((res) => {
         toast.success(res.data.message);

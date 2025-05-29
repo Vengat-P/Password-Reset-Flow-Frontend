@@ -13,7 +13,7 @@ const Login = ({ setToken }) => {
     e.preventDefault();
     const payload = { email, password };
     await axios
-      .post("http://localhost:5000/api/auth/login", payload)
+      .post("https://password-reset-flow-backend-123.onrender.com/api/auth/login", payload)
       //to handle response and errors
       .then((res) => {
         toast.success(res.data.message);
