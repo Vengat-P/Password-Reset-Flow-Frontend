@@ -8,18 +8,21 @@ import { ToastContainer } from "react-toastify";
 import "@fontsource/poppins/400.css";
 
 const App = () => {
-  const [token,setToken] = useState("")
+  const [token, setToken] = useState("");
   return (
     <div>
       <div>
-        <ToastContainer/>
+        <ToastContainer />
       </div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<RegisterPage />} />
-          <Route path="/login" element={<Login setToken={setToken}/>} />
+          <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password/:id/:token" element={<ResetPassword />} />
+          <Route
+            path="/reset-password/:id/:token"
+            element={<ResetPassword />}
+          />
         </Routes>
       </BrowserRouter>
     </div>
