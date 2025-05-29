@@ -12,9 +12,12 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post(`https://password-reset-flow-backend-123.onrender.com/api/auth/reset-password/${id}/${token}`, {
-        password,
-      })
+      .post(
+        `https://password-reset-flow-backend-123.onrender.com/api/auth/reset-password/${id}/${token}`,
+        {
+          password,
+        }
+      )
       //to handle response and errors
       .then((res) => {
         toast.success(res.data.message);
