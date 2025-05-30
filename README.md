@@ -18,7 +18,7 @@ Create a separate page for register ,login ,forgot password and reset password. 
 
 - **Routing -**
 
-- create BrowserRouter and wrap below. Second create Routes inside of this all routes are there ("/"-register(user register page) , "/login"-after register users need to login do that registered users directly come to this page, "/forgot-password"- user can send email from here to get a reset password link, "*"-nomatch route (PagenotFound)). 
+- create BrowserRouter and wrap below. Second create Routes inside of this all routes are there ("/"-register(user register page) , "/login"-after register users need to login do that registered users directly come to this page, "/forgot-password"- user can send email from here to get a reset password link ,"/reset-password/:id/:token" - reset password router page , "*"- nomatch route (PagenotFound)). 
 
 
 - **Logics -**
