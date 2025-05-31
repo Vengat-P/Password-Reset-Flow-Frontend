@@ -13,7 +13,10 @@ const Login = ({ setToken }) => {
     e.preventDefault();
     const payload = { email, password };
     await axios
-      .post("https://password-reset-flow-backend-123.onrender.com/api/auth/login", payload)
+      .post(
+        "https://password-reset-flow-backend-123.onrender.com/api/auth/login",
+        payload
+      )
       //to handle response and errors
       .then((res) => {
         toast.success(res.data.message);
@@ -30,9 +33,25 @@ const Login = ({ setToken }) => {
   };
   return (
     <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center  border border-2 bg-primary-subtle">
+      <div className=" d-flex  h-75 w-75   flex-column  justify-content-center my-auto py-2  border-2 border rounded-3 bg-danger">
+        <span className=" display-6 ">Don't Have an account ?</span>
+        <button className=" container justify-content-center border-0 px-2 bg-transparent ">
+          <Link to={"/"} className="text-muted text-decoration-none">
+            <p>
+              click here
+              <span className=" text-white text-decoration-underline">
+                Register
+              </span>
+            </p>
+          </Link>
+        </button>
+      </div>
       <div className=" d-flex h-75 w-75 flex-column  justify-content-center shadow-sm  my-auto border-2 border rounded-3 bg-white">
-        <form onSubmit={handleSubmit} className="container d-grid justify-content-center">
-          <p className="d-flex flex-column">
+        <form
+          onSubmit={handleSubmit}
+          className="container d-grid justify-content-center"
+        >
+          <p className="d-flex flex-column text-danger">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -45,7 +64,7 @@ const Login = ({ setToken }) => {
             />
           </p>
           <br />
-          <p className="d-flex flex-column">
+          <p className="d-flex flex-column text-danger">
             <label htmlFor="password">Password</label>
             <span className="d-flex justify-content-between">
               <input
@@ -103,7 +122,7 @@ const Login = ({ setToken }) => {
           <br />
           <button
             type="submit"
-            className="d-flex m-2 p-2 w-50  rounded-2  border border-1 shadow-sm bg-success text-white justify-content-center"
+            className="d-flex m-2 p-2 w-50  rounded-2  border border-1 shadow-sm bg-danger text-white justify-content-center"
           >
             Login
           </button>
@@ -112,14 +131,6 @@ const Login = ({ setToken }) => {
         </form>
 
         <br />
-        <button className="border-0 bg-white ">
-          <Link
-            to={"/"}
-            className="d-flex rounded-2 text-decoration-none  text-muted justify-content-center"
-          >
-            dont Have an account ? <span className="text-danger">Register</span>
-          </Link>
-        </button>
       </div>
     </div>
   );

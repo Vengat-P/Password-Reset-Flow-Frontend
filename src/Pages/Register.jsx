@@ -14,7 +14,10 @@ const Register = () => {
     e.preventDefault();
     const payload = { username, email, password };
     await axios
-      .post("https://password-reset-flow-backend-123.onrender.com/api/auth/register", payload)
+      .post(
+        "https://password-reset-flow-backend-123.onrender.com/api/auth/register",
+        payload
+      )
       .then((res) => {
         toast.success(res.data.message);
         navigate("/login");
@@ -34,7 +37,7 @@ const Register = () => {
           onSubmit={handleSubmit}
           className=" container d-grid justify-content-center"
         >
-          <p className="d-flex flex-column">
+          <p className="d-flex flex-column text-danger">
             <label htmlFor="username">Name</label>
             <input
               type="text"
@@ -47,7 +50,7 @@ const Register = () => {
             />
           </p>
           <br />
-          <p className="d-flex flex-column">
+          <p className="d-flex flex-column text-danger">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -60,7 +63,7 @@ const Register = () => {
             />
           </p>
           <br />
-          <p className="d-flex flex-column ">
+          <p className="d-flex flex-column text-danger ">
             <label htmlFor="password">Password</label>
             <span>
               <input
@@ -110,15 +113,22 @@ const Register = () => {
           <br />
           <button
             type="submit"
-            className="d-flex m-2 p-2 rounded-2 border border-1 shadow-sm bg-success text-white justify-content-center"
+            className="d-flex m-2 p-2 rounded-2 border border-1 shadow-sm bg-danger text-white justify-content-center"
           >
             Register
           </button>
         </form>
-        <button className=" container justify-content-center border-0 px-2 bg-white  ">
+      </div>
+      <div className=" d-flex  h-75 w-75   flex-column  justify-content-center my-auto py-2  border-2 border rounded-3 bg-danger">
+        <span className=" display-6 ">Already Have an account ?</span>
+        <button className=" container justify-content-center border-0 px-2 bg-transparent ">
           <Link to={"/login"} className="text-muted text-decoration-none ">
-            Already Have an account ?{" "}
-            <span className=" text-danger">Login</span>
+            <p>
+              click here{" "}
+              <span className=" text-white text-decoration-underline">
+                Login
+              </span>
+            </p>
           </Link>
         </button>
       </div>
